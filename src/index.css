@@ -1,13 +1,355 @@
-body {
+.body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  background-color: #f5f5f5;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.body--darkmode {
+  background-color: #171823;
+}
+
+/* ----- Generic Styles ----- */
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #9495A5;
+  font-weight: 700;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.padding-container {
+  padding: 0 6.3%;
+}
+
+.side-margins {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  max-width: 540px;
+  width: 87,4%;
+}
+
+.check-box {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #D1D2DA;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  margin-left: 20px;
+}
+
+.check-box:hover {
+  cursor: pointer;
+  border-color: #C058F3;
+}
+
+.check-box:checked {
+  background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+  border: none;
+}
+
+.check-box:checked:after {
+  content: '\2714';
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+.check-box--dark-mode {
+  border-color: #393A4B;
+}
+
+
+
+
+/* ----- Header Styling ----- */
+
+
+.header {
+  background-image: url("./components/images/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  height: 200px;
+}
+
+.header-dark-mode {
+  background-image: url("./components/images/bg-mobile-dark.jpg")
+}
+
+.header__top--container {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  padding-top: 48px;
+}
+
+.header__top--logo {
+  color: #FFFFFF;
+  letter-spacing: 18px;
+  font-size: 30px;
+  margin: 0;
+}
+
+.header__input--container {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  width: 87,4%;
+  height: 48px;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+.header__input--container--dark-mode {
+  background-color: #25273D;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+}
+
+.header__input--text {
+  border: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 12px;
+  margin-left: -1px;
+}
+
+.header__input--text--dark-mode {
+  background-color: #25273D;
+  color: #C8CBE7;
+}
+
+.header__top--darkmode-icon {
+  cursor: pointer;
+}
+
+
+/* ----- The Todo List ----- */
+
+.list--container {
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  border-radius: 5px;
+  margin-top: -28px;
+}
+
+.list--container--dark-mode {
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+}
+
+.list__task {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E3E4F1;
+  height: 52px;
+}
+
+.list__task--dark-mode {
+  background-color: #25273D;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  border-color: #393A4B;
+  color: #C8CBE7;
+}
+
+.list__task:first-of-type {
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.list__task__text {
+  font-size: 12px;
+  letter-spacing: -0.166667px;
+  color: #494C6B;
+  background-color: transparent;
+}
+
+.list__task__text--dark-mode {
+  color: #C8CBE7;
+}
+
+.list__task__text--done {
+  font-size: 12px;
+  letter-spacing: -0.166667px;
+  color: #D1D2DA;
+}
+
+.list__task__text--done--dark-mode {
+  color: #4D5067;
+}
+
+.list__task__delete-icon {
+  margin-left: auto;
+  margin-right: 20px;
+  height: 12px;
+  cursor: pointer;
+}
+
+
+/* ----- Buttons On The Bottom ----- */
+
+.list__info--container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E3E4F1;
+  height: 50px;
+  margin-top: -16px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  font-size: 12px;
+  letter-spacing: -0.166667px;
+  color: #9495A5;
+}
+
+.list__info--container--dark-mode {
+  background-color: #25273D;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  border-color: #393A4B;
+  color: #C8CBE7;
+}
+
+.list__info--container--dark-mode button {
+  color: #5B5E7E;
+}
+
+.list__info--items-left {
+  margin-top: 18px;
+  margin-left: 20px;
+  letter-spacing: -0.166667px;
+}
+
+.list__info--clear-btn {
+  font-weight: 400;
+  margin-right: 20px;
+}
+
+.list__info--clear-btn:hover {
+  color: #494C6B;
+}
+
+.list__buttons--container {
+  margin-top: 16px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  height: 48px;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  display: flex;
+  justify-content: center;
+}
+
+.list__buttons--container--dark-mode {
+  background-color: #25273D;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+}
+
+.list__buttons--container--dark-mode .list__buttons--btn , p {
+  color: #5B5E7E;
+}
+
+.list__buttons--active-btn {
+  margin: 0 19px;
+}
+
+.list__buttons--btn--active {
+  color: #3A7CFD;
+}
+
+.list__buttons--btn:hover {
+  color: #494C6B;
+}
+
+
+@media screen and (min-width: 580px){
+
+  /* ----- Generic Styles ----- */
+
+  .check-box {
+    height: 24px;
+    width: 24px;
+    border-radius: 12px;
+  }
+
+  /* ----- Header Styling ----- */
+
+  .header {
+    background-image: url("./components/images/bg-desktop-light.jpg");
+    height: 300px;
+    background-position: center;
+  }
+  
+  .header-dark-mode {
+    background-image: url("./components/images/bg-desktop-dark.jpg");
+  }
+
+  .header__top--container {
+    padding-top: 70px;
+  }
+
+  .header__top--logo {
+    font-size: 40px;
+  }
+
+  .header__input--container {
+    height: 64px;
+    margin-top: 68px;
+  }
+
+  .header__input--text {
+    font-size: 18px;
+    letter-spacing: -0.25px;
+  }
+
+  /* ----- The Todo List ----- */
+
+  .list--container {
+    margin-top: -58px;
+  }
+
+  .list__task {
+    height: 64px;
+  }
+
+  .list__task__text {
+    font-size: 18px;
+    letter-spacing: -0.25px;
+  }
+
+  .list__task__text--done {
+    font-size: 18px;
+    letter-spacing: -0.25px;
+  }
+
+  .list__task__delete-icon {
+    width: 17.68px;
+    height: 17.68px;
+  }
+
+  .list__info--container {
+    font-size: 14px;
+    letter-spacing: -0.194444px;
+  }
+
+  .list__buttons--btn {
+    font-size: 14px;
+    letter-spacing: -0.194444px;
+  }
+
+  .list__buttons--container {
+    background-color: transparent;
+    box-shadow: none;
+    margin-top: -48.5px;
+  }
 }
