@@ -49,6 +49,7 @@ function TodoList({taskList, taskLeft, handleCheckBox, handleDelete, clearComple
           <button onClick={showCompleted} className={displayListStatus == "completed" ? "list__buttons--btn--active" : "list__buttons--btn"}>Completed</button>
         </div>
       </form>
+      <p className={darkMode ? "list__Instruction-text list__Instruction-text--dark-mode" : "list__Instruction-text"}>Drag and drop to reorder list</p>
     </div>
   );
 }

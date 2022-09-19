@@ -271,6 +271,17 @@ button:hover{
   color: #494C6B;
 }
 
+.list__Instruction-text {
+  color: #9495A5;
+  font-size: 14px;
+  letter-spacing: -0.194444px;
+  margin-top: 40px;
+}
+
+.list__Instruction-text--dark-mode {
+  color: #5B5E7E;
+}
+
 
 @media screen and (min-width: 580px){
 
@@ -336,6 +347,8 @@ button:hover{
     width: 17.68px;
     height: 17.68px;
   }
+
+  /* ----- Buttons On The Bottom ----- */
 
   .list__info--container {
     font-size: 14px;
