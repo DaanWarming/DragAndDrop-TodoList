@@ -4,17 +4,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 
 
-function TodoList({taskList, taskLeft, handleCheckBox, handleDelete, clearCompleted, displayList, showAll, showActive, showCompleted, displayListStatus, darkMode}) {
-  const [characters, updateCharacters] = useState(displayList)
-
-  function handleOnDragEnd(result) {
-    if (!result.destination) return;
-    const items = Array.from(characters);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-
-    updateCharacters(items);
-  }
+function TodoList({taskList, taskLeft, handleCheckBox, handleDelete, clearCompleted, displayList, showAll, showActive, showCompleted, displayListStatus, darkMode, handleOnDragEnd, characters}) {
 
 
   function RenderList() {
@@ -23,14 +13,14 @@ function TodoList({taskList, taskLeft, handleCheckBox, handleDelete, clearComple
         <Droppable droppableId="characters">
           {(provided) => (
               <ul className={darkMode ? "list--container list--container--dark-mode side-margins" : "list--container side-margins"} {...provided.droppableProps} ref={provided.innerRef}>
-                {characters.map(({text, id, isDone} , index) => {
+                {displayList.map((task , index) => {
                   return (
-                    <Draggable key={id} draggableId={id} index={index}>
+                    <Draggable key={task.id} draggableId={task.id} index={index}>
                       {(provided) => (
                         <li className={darkMode ? "list__task list__task--dark-mode" : "list__task"} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                          <input type="checkbox" checked={isDone} onChange={() => handleCheckBox(id)} className={darkMode ? "check-box check-box--dark-mode" : "check-box"}></input>
-                          {isDone ? <p className={darkMode ? "list__task__text--done list__task__text--done--dark-mode" : "list__task__text--done"}><s>{text}</s></p> : <p className={darkMode ? "list__task__text list__task__text--dark-mode" : "list__task__text"}>{text}</p>}
-                          <img src={IconCross} onClick={() => handleDelete(id)} className="list__task__delete-icon"></img>
+                          <input type="checkbox" checked={task.isDone} onChange={() => handleCheckBox(task.id)} className={darkMode ? "check-box check-box--dark-mode" : "check-box"}></input>
+                          {task.isDone ? <p className={darkMode ? "list__task__text--done list__task__text--done--dark-mode" : "list__task__text--done"}><s>{task.text}</s></p> : <p className={darkMode ? "list__task__text list__task__text--dark-mode" : "list__task__text"}>{task.text}</p>}
+                          <img src={IconCross} onClick={() => handleDelete(task.id)} className="list__task__delete-icon"></img>
                           {provided.placeholder}
                         </li>
                       )}

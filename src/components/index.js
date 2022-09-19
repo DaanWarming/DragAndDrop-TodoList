@@ -42,7 +42,19 @@ function Todo() {
     ]);
     const [displayList, setDisplayList] = useState(taskList)
     const [darkMode, setDarkMode] = useState(false)
+    const [characters, updateCharacters] = useState(displayList)
     // Add new task
+
+    function handleOnDragEnd(result) {
+        if (!result.destination) return;
+        const items = Array.from(displayList);
+        const [reorderedItem] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderedItem);
+    
+        setTaskList(items);
+    }
+
+
 
     function changeDarkMode() {
         setDarkMode(!darkMode)
@@ -144,7 +156,7 @@ function Todo() {
     return (
         <div className="body--class">
             <TodoHeader resetNewTask={resetNewTask} newTask={newTask} newTaskCheck={newTaskCheck} handleChange={handleChange} handleCheck={handleCheck} addTask={addTask} changeDarkMode={changeDarkMode} darkMode={darkMode}/>
-            <TodoList taskList={taskList} taskLeft={taskLeft} handleCheckBox={handleCheckBox} handleDelete={handleDelete} clearCompleted={clearCompleted} displayList={displayList} showAll={showAll} showActive={showActive} showCompleted={showCompleted} displayListStatus={displayListStatus} darkMode={darkMode} />
+            <TodoList taskList={taskList} taskLeft={taskLeft} handleCheckBox={handleCheckBox} handleDelete={handleDelete} clearCompleted={clearCompleted} displayList={displayList} showAll={showAll} showActive={showActive} showCompleted={showCompleted} displayListStatus={displayListStatus} darkMode={darkMode} handleOnDragEnd={handleOnDragEnd} characters={characters}/>
         </div>
     )
 }
