@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DragAndDrop-TodoList/static/css/main.611cbe33.css",
-    "main.js": "/DragAndDrop-TodoList/static/js/main.82bcf873.js",
+    "main.js": "/DragAndDrop-TodoList/static/js/main.bc7c96ba.js",
     "static/js/787.a5cad257.chunk.js": "/DragAndDrop-TodoList/static/js/787.a5cad257.chunk.js",
     "static/media/bg-desktop-light.jpg": "/DragAndDrop-TodoList/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
     "static/media/bg-desktop-dark.jpg": "/DragAndDrop-TodoList/static/media/bg-desktop-dark.73e47dbb723ebc772ef0.jpg",
@@ -11,11 +11,11 @@
     "static/media/icon-moon.svg": "/DragAndDrop-TodoList/static/media/icon-moon.6c03114b495d05f4380b3c544d9afe2a.svg",
     "static/media/icon-cross.svg": "/DragAndDrop-TodoList/static/media/icon-cross.6ee81d30b75cab19d6f7314624fcc4d6.svg",
     "main.611cbe33.css.map": "/DragAndDrop-TodoList/static/css/main.611cbe33.css.map",
-    "main.82bcf873.js.map": "/DragAndDrop-TodoList/static/js/main.82bcf873.js.map",
+    "main.bc7c96ba.js.map": "/DragAndDrop-TodoList/static/js/main.bc7c96ba.js.map",
     "787.a5cad257.chunk.js.map": "/DragAndDrop-TodoList/static/js/787.a5cad257.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.611cbe33.css",
-    "static/js/main.82bcf873.js"
+    "static/js/main.bc7c96ba.js"
   ]
 }
